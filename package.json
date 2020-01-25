@@ -1,0 +1,45 @@
+{
+  "name": "@manvalls/rollup-config",
+  "version": "1.0.0",
+  "description": "manvalls rollup config",
+  "sideEffects": false,
+  "main": "./dist/rollupConfig.cjs.js",
+  "module": "./dist/rollupConfig.esm.js",
+  "es": "./dist/rollupConfig.es.js",
+  "devDependencies": {
+    "npm-run-all": "^4.1.3",
+    "rollup": "^1.29.1"
+  },
+  "peerDependencies": {
+    "rollup": "^1.29.1"
+  },
+  "dependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-transform-for-of": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "eslint": "^5.16.0",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-babel-minify": "^9.1.1",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-gzip": "^2.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.2.0"
+  },
+  "scripts": {
+    "prepare:cjs": "TARGET=cjs rollup -c rollup.config.js",
+    "prepare:esm": "TARGET=esm rollup -c rollup.config.js",
+    "prepare:es": "TARGET=es rollup -c rollup.config.js",
+    "prepare": "run-p prepare:*",
+    "lint": "eslint src/**"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/manvalls/rollup-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/manvalls/rollup-config/issues"
+  },
+  "author": "Manuel Valls Fernández <manolo@vlrz.es>",
+  "license": "Apache-2.0"
+}
