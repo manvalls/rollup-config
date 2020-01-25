@@ -1,6 +1,6 @@
 {
   "name": "@vlrz/rollup-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "manvalls rollup config",
   "sideEffects": false,
   "main": "./dist/rollupConfig.cjs.js",
