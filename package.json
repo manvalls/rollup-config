@@ -1,5 +1,5 @@
 {
-  "name": "@manvalls/rollup-config",
+  "name": "@vlrz/rollup-config",
   "version": "1.0.0",
   "description": "manvalls rollup config",
   "sideEffects": false,
