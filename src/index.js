@@ -25,9 +25,13 @@ export default ({ external = [], name, globals } = {}) => {
     }),
   ]
 
-  const minPlugins = [
+  const esResolveOptions = {
+    mainFields: ['es', 'module', 'main'],
+  }
+
+  const minPlugins = (es) => [
     commonjs(),
-    resolve(),
+    es ? resolve(esResolveOptions) : resolve(),
     terser(),
     gzip()
   ]
@@ -78,7 +82,7 @@ export default ({ external = [], name, globals } = {}) => {
 
       plugins = [
         ...babelPlugins,
-        ...minPlugins,
+        ...minPlugins(),
       ]
 
       filterExternal()
@@ -93,7 +97,7 @@ export default ({ external = [], name, globals } = {}) => {
         globals,
       }
 
-      plugins = minPlugins
+      plugins = minPlugins(true)
 
       filterExternal()
 
